@@ -1,4 +1,6 @@
 import ManageData from './components/manageData';
+import ListRender from './components/listRender';
+import ConditionalRender from './components/conditionalRender';
 
 import './App.css';
 
@@ -9,6 +11,8 @@ function App() {
     <div className="App">
       <h1>Avançando no React</h1>
       <ManageData/>
+      <ListRender/>
+      <ConditionalRender/>
       <div>
         {/* imagem em public */}
         <img src="/img1.jpg" alt="paisagem" />
