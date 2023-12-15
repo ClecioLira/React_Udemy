@@ -2,12 +2,16 @@ import ManageData from './components/manageData';
 import ListRender from './components/listRender';
 import ConditionalRender from './components/conditionalRender';
 import ShowUserName from './components/ShowUserName';
+import CarDetails from './components/CarDetails';
+import Fragment from './components/Fragment';
+import Container from './components/Container';
+import ExecuteFunction from './components/ExecuteFunction';
+
 import {useState} from 'react'
 
 import './App.css';
 
 // import Img2 from './assets/img2.jpg'
-import CarDetails from './components/CarDetails';
 
 function App() {
   const name = 'Clécio';
@@ -36,6 +40,11 @@ function App() {
     }
   ]
 
+  function showMessage() {
+    console.log('Evento do componente pai');
+  }
+
+
   return (
     <div className="App">
       <h1>Avançando no React</h1>
@@ -57,11 +66,23 @@ function App() {
       {/* LOOP EM ARRAY DE OBJETOS */}
       {cars.map((car) => (
         <CarDetails 
+          key={car.id}
           brand={car.brand} 
           color={car.color} 
           km={car.km} 
           novo={car.novo}/>
       ))}
+
+      {/* FRAGMENTO */}
+      <Fragment/>
+
+      {/* CHILDREN */}
+      <Container myValue="testing">
+        <p>Este é o conteudo</p>
+      </Container>
+
+      {/* FUNÇÃO PROP */}
+      <ExecuteFunction myFunction={showMessage}/>
     </div>
   );
 }
