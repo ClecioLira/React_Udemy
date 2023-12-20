@@ -1,0 +1,9 @@
+.p-componente {
+    color: green;
+    background-color: #000;
+}
+
+p {
+    color: yellow;
+    background-color: gray;
+}
