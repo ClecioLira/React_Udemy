@@ -1,0 +1,29 @@
+html, 
+body {
+    max-height: 100%;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: rgb(63,94,251);
+    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    color: whitesmoke;
+}
+
+button {
+    font-size: large;
+    padding: 1rem;
+    border-radius: 6px;
+    color: whitesmoke;
+    border: .1rem solid whitesmoke;
+    background: linear-gradient(90deg, rgba(252,70,107,1) 0%, rgba(63,94,251,1) 100%);
+    cursor: pointer;
+    transition: all .2s linear;
+}
+button:hover,
+button:focus {
+    background:linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    transform: scale(1.05);
+}
