@@ -1,20 +1,39 @@
+import { useState } from 'react';
+import './App.css';
+// import Logo from './assets/logo512.png'
+
+
 import ManageData from './components/ManageData';
 import ListRender from './components/ListRender';
 import CondicionalRender from './components/CondicionalRender';
 import ShowUserName from './components/ShowUserName';
 import CarDetails from './components/CarDetails';
-import { useState } from 'react';
-import './App.css';
-// import Logo from './assets/logo512.png'
+import Fragments from './components/Fragments';
+import Container from './components/Container';
+import ExecuteFunction from './components/ExecuteFunction';
+import Message from './components/Message';
+import ChangeMessageState from './components/ChangeMessageState';
 
 function App() {
   // const name = "joaquim"
   const [userName, setUserName] = useState("Maria")
+
   const cars = [
     {id: 1, marca: "Ferrari", color:"verde", newCar: true, km: 0},
     {id: 2, marca: "Kia", color:"branco", newCar: false, km: 10000},
     {id: 3, marca: "Renault", color:"vermelho", newCar: true, km: 0}
+
   ]
+
+  function showMessage() {
+    console.log("componente pai")
+  }
+
+  const [message, setMessage] = useState("")
+  const handleMessage = (msg) => {
+    setMessage(msg)
+  }
+
   return (
     <div className="App">
       <h1>Avancando em React</h1>
@@ -55,6 +74,21 @@ function App() {
           newCar={car.newCar}
         />
       ))}
+
+      <h1>FRAGMENTS</h1>
+      <Fragments propFragment="teste"/>
+
+      <h1>CHILDREN</h1>
+      <Container myValue="teste">
+        <p>conteudo children</p>
+      </Container>
+
+      <h1>FUNÇÃO EM PROPS</h1>
+      <ExecuteFunction myFunction={showMessage}/>
+
+      <h1>STATE LIFT</h1>
+      <Message msg={message}/>
+      <ChangeMessageState changeMessage={handleMessage}/>
     </div>
   );
 }
