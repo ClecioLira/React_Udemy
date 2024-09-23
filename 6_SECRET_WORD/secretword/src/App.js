@@ -68,13 +68,27 @@ function App() {
         ...atualLetraErrada,
         normalLetra
       ])
+
+      mudaChances(atualChance => atualChance - 1)
     }
 
-    console.log(letraAdivinhada)
-    console.log(letraErrada)
   }
 
+  function clearLetterStates() {
+    mudaLetraAdivinhada([])
+    mudaLetraErrada([])
+  }
+  
+  useEffect(() => {
+    if(chances <= 0) {
+      clearLetterStates()
+      setGameStage(stages[2].name)
+    }
+  }, [chances])
+  
   const retry = () => {
+    mudaPontuacao(0)
+    mudaChances(5)
     setGameStage(stages[0].name)
   }
 
@@ -92,7 +106,7 @@ function App() {
         chances={chances}
         pontuacao={pontuacao}
       />}
-      {gameStage === 'end' && <GameOver retry={retry}/>}
+      {gameStage === 'end' && <GameOver retry={retry} score={pontuacao}/>}
     </div>
   );
 }
