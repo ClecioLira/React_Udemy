@@ -1,0 +1,109 @@
+{
+  "products": [
+    {
+      "id": "8cef",
+      "name": "camisa",
+      "price": "12"
+    },
+    {
+      "id": "197e",
+      "name": "capa de chuva",
+      "price": "50"
+    },
+    {
+      "id": "aee4",
+      "name": "short",
+      "price": "56"
+    },
+    {
+      "id": "0f8c",
+      "name": "chaveiro",
+      "price": "15"
+    },
+    {
+      "id": "10cb",
+      "name": "bone",
+      "price": "36"
+    },
+    {
+      "id": "9539",
+      "name": "camisa sport",
+      "price": "60"
+    },
+    {
+      "id": "12a0",
+      "name": "camisa sao paulo",
+      "price": "60"
+    },
+    {
+      "id": "1699",
+      "name": "camisa",
+      "price": "30"
+    },
+    {
+      "id": "16a5",
+      "name": "short",
+      "price": "20"
+    },
+    {
+      "id": "7688",
+      "name": "jaqueta",
+      "price": "200"
+    },
+    {
+      "id": "2cdc",
+      "name": "camisa",
+      "price": "20"
+    },
+    {
+      "id": "1cb0",
+      "name": "camisa",
+      "price": "20"
+    },
+    {
+      "id": "ff99",
+      "name": "camisa",
+      "price": "20"
+    },
+    {
+      "id": "3e16",
+      "name": "camisa",
+      "price": "20"
+    },
+    {
+      "id": "2c77",
+      "name": "camisa",
+      "price": "20"
+    },
+    {
+      "id": "b9c1",
+      "name": "camisa",
+      "price": "65"
+    },
+    {
+      "id": "e777",
+      "name": "short",
+      "price": "20"
+    },
+    {
+      "id": "843b",
+      "name": "lanche",
+      "price": "123"
+    },
+    {
+      "id": "27ae",
+      "name": "cabo hdmi",
+      "price": "10"
+    },
+    {
+      "id": "8309",
+      "name": "camisa",
+      "price": "30"
+    },
+    {
+      "id": "d97a",
+      "name": "camisa",
+      "price": "20"
+    }
+  ]
+}
