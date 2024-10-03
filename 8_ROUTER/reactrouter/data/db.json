@@ -4,6 +4,21 @@
       "id": "1",
       "name": "calça",
       "price": "20"
+    },
+    {
+      "id": "2",
+      "name": "camisa",
+      "price": "200"
+    },
+    {
+      "id": "3",
+      "name": "jaqueta",
+      "price": "30"
+    },
+    {
+      "id": "4",
+      "name": "short",
+      "price": "20"
     }
   ]
 }
