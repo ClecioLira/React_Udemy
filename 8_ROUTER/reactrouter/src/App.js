@@ -6,7 +6,9 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Product from './pages/Product';
 import NavBar from './components/NavBar';
-import Info from './pages/Info';
+import Info from './pages/Info'
+
+;
 import NotFound from './pages/NotFound';
 import SearchForm from './components/SearchForm';
 import Search from './pages/Search';
