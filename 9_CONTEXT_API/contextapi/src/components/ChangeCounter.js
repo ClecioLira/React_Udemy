@@ -8,6 +8,7 @@ const ChangeCounter = () => {
   return (
     <div>
         <button onClick={() => setCounter(counter + 1)}>Add value counter</button>
+        <button onClick={() => setCounter(counter - 1)}>Rem value counter</button>
     </div>
   )
 }
