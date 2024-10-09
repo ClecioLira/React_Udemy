@@ -1,11 +1,11 @@
-import { db } from "../firebase/config";
+import { app, db } from "../firebase/config";
 
 import { 
     getAuth, 
-    createUserWithEmailAndPassword, 
-    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword, // CADASTRO
+    signInWithEmailAndPassword, // ENTRAR
     updateProfile,
-    signOut
+    signOut // SAIR
 } from "firebase/auth";
 
 import { useState, useEffect } from "react";
@@ -17,7 +17,7 @@ export const useAuthentication = () => {
     // cleanup
     const [cancelled, setCancelled] = useState(false)
 
-    const auth = getAuth()
+    const auth = getAuth(app)
 
     function checkIfIsCancelled() {
         if(cancelled) {
@@ -25,6 +25,7 @@ export const useAuthentication = () => {
         }
     }
 
+    // REGISTER
     const createUser = async (data) => {
         checkIfIsCancelled()
 
@@ -64,6 +65,43 @@ export const useAuthentication = () => {
         }
     }
 
+    // LOGIN
+    const login = async (data) => {
+        checkIfIsCancelled()
+
+        setLoading(true)
+        setError(null)
+
+        try {
+            await signInWithEmailAndPassword(auth, data.email, data.password)
+
+            setLoading(false)
+        } catch (error) {
+            console.log(error.message)
+            console.log(typeof error.message)
+
+            let systemErrorMessage
+
+            if(error.message.includes("user-not-found")) {
+                systemErrorMessage = "Usuário não encontrado."
+            } else if (error.message.includes("invalid-login-credentials")) {
+                systemErrorMessage = "Senha incorreta."
+            } else {
+                systemErrorMessage = "Ocorreu um erro, tente novamente mais tarde." 
+            }
+
+            setLoading(false)
+            setError(systemErrorMessage)
+        }
+    }
+
+    // LOGOUT
+    const logout = () => {
+        checkIfIsCancelled()
+
+        signOut(auth)
+    }
+
     useEffect(() => {
         return () => setCancelled(true)
     }, [])
@@ -72,6 +110,8 @@ export const useAuthentication = () => {
         auth,
         createUser,
         error,
-        loading
+        loading,
+        logout,
+        login
     }
 }
