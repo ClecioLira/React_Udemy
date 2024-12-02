@@ -60,14 +60,14 @@ const HookUseReducer = () => {
         />
         <input type="submit" value="Enviar" />
       </form>
+      <ul>
       {tasks.map((task) => (
-        <ul>
           <li key={task.id}>
             {task.text}
             <button onClick={() => removeTask(task.id)}>Apagar</button>
           </li>
-        </ul>
       ))}
+      </ul>
 
       <hr />
     </div>

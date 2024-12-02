@@ -23,6 +23,17 @@ const HookUseEffect = () => {
     if (outroNumero > 0) console.log("serei executado quando o numero for mudado");
   }, [outroNumero]);
 
+  // cleanup do useEffect
+  useEffect(() => {
+    // const timer = setTimeout(() => {
+    //   console.log("ola mundo")
+
+    //   setOutroNumero(outroNumero + 1)
+    // }, 2000)
+
+    // return clearTimeout(timer)
+  }, [outroNumero])
+
   return (
     <div>
       <h2>HookUseEffect</h2>
