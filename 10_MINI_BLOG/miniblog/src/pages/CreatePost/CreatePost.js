@@ -105,7 +105,7 @@ const CreatePost = () => {
           />
         </label>
 
-        {!response.loading && <button className="btn">Cadastrar</button>}
+        {!response.loading && <button className="btn">Enviar</button>}
         {response.loading && (
           <button className="btn" disabled>
             Aguarde...
