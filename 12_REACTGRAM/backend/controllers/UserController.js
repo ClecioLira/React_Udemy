@@ -120,9 +120,28 @@ const update = async (req, res) => {
     user.bio = bio;
   }
 
-  await user.save()
+  await user.save();
 
-  res.status(200).json(user)
+  res.status(200).json(user);
+};
+
+// pegar usuario pelo id
+const getUserById = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const user = await User.findById(mongoose.Types.ObjectId.createFromHexString(id)).select("-password");
+
+    if (!(mongoose.Types.ObjectId.isValid(id))) {
+      res.status(404).json({errors: [`Usuário não encontrado.2`]});
+      return;
+    }
+
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(404).json({ errors: ["Usuário não encontrado."] });
+    return;
+  }
 };
 
 module.exports = {
@@ -130,4 +149,5 @@ module.exports = {
   login,
   getCurrentUser,
   update,
+  getUserById,
 };
