@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
+// COMPONENTE
+import Message from "../../components/Message/Message";
+
 // REDUX
 import { register, reset } from "../../slices/authSlice";
 
@@ -46,6 +49,7 @@ const Register = () => {
           placeholder="Nome"
           value={name || ""}
           onChange={(e) => setName(e.target.value)}
+          required
         />
 
         <input
@@ -53,6 +57,7 @@ const Register = () => {
           placeholder="E-mail"
           value={email || ""}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
 
         <input
@@ -60,6 +65,7 @@ const Register = () => {
           placeholder="Senha"
           value={password || ""}
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
 
         <input
@@ -67,9 +73,12 @@ const Register = () => {
           placeholder="Confirme a senha"
           value={confirmPassword || ""}
           onChange={(e) => setConfirmPassword(e.target.value)}
+          required
         />
 
-        <input type="submit" value="Cadastrar" />
+        {!loading && <input type="submit" value="Cadastrar" />}
+        {loading && <input type="submit" value="Aguarde..." disabled />}
+        {error && <Message msg={error} type="error" />}
       </form>
 
       <p>
