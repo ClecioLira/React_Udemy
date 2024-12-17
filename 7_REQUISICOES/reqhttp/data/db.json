@@ -1,0 +1,79 @@
+{
+  "produtos": [
+    {
+      "id": "1",
+      "name": "cadeira",
+      "price": 59.9
+    },
+    {
+      "id": "2",
+      "name": "mesa",
+      "price": 599.9
+    },
+    {
+      "id": "3",
+      "name": "cama",
+      "price": 599.9
+    },
+    {
+      "id": "cf66",
+      "name": "teste",
+      "price": "12"
+    },
+    {
+      "id": "f917",
+      "name": "tablet",
+      "price": "15"
+    },
+    {
+      "id": "aee2",
+      "name": "mesa",
+      "price": "78"
+    },
+    {
+      "id": "194a",
+      "name": "mesa",
+      "price": "77"
+    },
+    {
+      "id": "8e82",
+      "name": "mesa",
+      "price": "78"
+    },
+    {
+      "id": "9126",
+      "name": "mesa",
+      "price": "70"
+    },
+    {
+      "id": "e677",
+      "name": "mesa",
+      "price": "70"
+    },
+    {
+      "id": "f634",
+      "name": "mesa",
+      "price": "70"
+    },
+    {
+      "id": "1e4f",
+      "name": "armario",
+      "price": "150"
+    },
+    {
+      "id": "e8bb",
+      "name": "geladeira",
+      "price": "200"
+    },
+    {
+      "id": "69ac",
+      "name": "mesa",
+      "price": "75"
+    },
+    {
+      "id": "9bf4",
+      "name": "teste",
+      "price": "123"
+    }
+  ]
+}
